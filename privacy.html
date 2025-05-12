@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapSafe - Privacy Policy</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .hero {
+            padding: 3rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff6b6b;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .button:hover {
+            background-color: #ff5252;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        .privacy-section {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .privacy-section h2 {
+            color: #6a11cb;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 0.5rem;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .data-table th {
+            background-color: #6a11cb;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+        }
+        .data-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+        .data-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #6a11cb;
+        }
+        .effective-date {
+            text-align: center;
+            font-style: italic;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+        .summary {
+            background-color: #e8f4ff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 5px solid #2575fc;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="hero">
+            <h1>SnapSafe Privacy Policy</h1>
+            <p>We don't want your data.</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="effective-date">Effective April 20, 2025</div>
+        
+        <div class="summary">
+            <p>SnapSafe was built with privacy as its first‑class feature. Below is the plain‑language summary of what happens to your data when you use the app:</p>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>What we collect</th>
+                    <th>Where it goes</th>
+                    <th>Why we need it</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="highlight">Nothing</span>—no personal data, usage analytics, or diagnostics</td>
+                    <td>Nowhere (the app has <em>no</em> Internet permission)</td>
+                    <td>We don't</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="privacy-section">
+            <h2>1. Data Collection</h2>
+            <p>SnapSafe does <span class="highlight">not</span> collect, store, or transmit any personally identifiable information (PII), usage data, or any other kind of data whatsoever. All photos and videos remain solely on your device, unless you explicitly share them.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>2. Network Access</h2>
+            <p>The app's manifest deliberately omits <code>android.permission.INTERNET</code>. Consequently, SnapSafe is technically incapable of connecting to the Internet, cloud services, or third‑party APIs.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>3. File Access</h2>
+            <p>SnapSafe operates entirely within its private app storage for saving images you capture. It does <span class="highlight">not</span> request broad file‑system access (e.g., <code>MANAGE_EXTERNAL_STORAGE</code>) and never reads files outside its own sandbox.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>4. Permissions Used</h2>
+            <ul>
+                <li><code>android.permission.CAMERA</code> – required to capture photos and video.</li>
+                <li><code>android.permission.ACCESS_COARSE_LOCATION</code> – Users can optionally grant this permission if they want obfuscated location data saved with their photos.</li>
+                <li><code>android.permission.ACCESS_FINE_LOCATION</code> – Users can optionally grant this permission if they want precise location data saved with their photos.</li>
+            </ul>
+            <p>No other runtime permissions are requested.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>5. Third‑Party Services</h2>
+            <p>None. SnapSafe is 100% open source and contains no advertising or analytics libraries.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>6. Changes to This Policy</h2>
+            <p>If SnapSafe's behavior ever changes in a way that affects privacy, this document will be updated in the source repository and a new release will note those changes.</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>7. Contact</h2>
+            <p>Questions or concerns? Open an issue in the <a href="https://github.com/Wavesonics/SecureCamera" style="color: #6a11cb;">GitHub repository</a>.</p>
+        </div>
+
+        <div style="text-align: center; margin: 3rem 0;">
+            <a href="index.html" class="button">Return to Home</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="security.html">Security Details</a>
+            <a href="https://github.com/SecureCamera">GitHub</a>
+            <a href="mailto:darkrockstudios@gmail.com">Contact</a>
+        </div>
+        <p>&copy; 2025 SnapSafe. All rights reserved.</p>
+    </footer>
+</body>
+</html>

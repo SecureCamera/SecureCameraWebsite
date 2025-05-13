@@ -9,119 +9,194 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="manifest" href="favicon/site.webmanifest">
     <link rel="shortcut icon" href="favicon/favicon.ico">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .hero {
-            padding: 3rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .button {
-            display: inline-block;
-            background-color: #ff6b6b;
-            color: white;
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            margin-top: 1rem;
-        }
-        .button:hover {
-            background-color: #ff5252;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        .placeholder {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 3rem;
-            text-align: center;
-            margin: 2rem 0;
-        }
-        .placeholder h2 {
-            color: #6a11cb;
-            margin-top: 0;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-        }
-        .footer-links a {
-            color: white;
-            margin: 0 1rem;
-            text-decoration: none;
-        }
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="security.css">
 </head>
 <body>
     <header>
         <div class="hero">
-            <h1>SnapSafe Security Details</h1>
-            <p>Understanding how we protect your photos and privacy</p>
+            <h1>SnapSafe Security</h1>
+            <p>Understand how we protect your photos and privacy</p>
         </div>
     </header>
 
     <div class="container">
-        <h2>Our Security Approach</h2>
-        <p>At SnapSafe, we take your privacy and security seriously. This page will provide detailed information about our security architecture, encryption methods, and privacy protections.</p>
+        <section class="security-section">
+            <h2>Our Security Approach</h2>
+            <p>We've built our app from the ground up with security as the foundation, not as an afterthought like many other photo apps.</p>
 
-        <div class="placeholder">
-            <h2>Coming Soon</h2>
-            <p>We're currently preparing comprehensive documentation about our security measures. Check back soon for detailed information about:</p>
-            <ul style="display: inline-block; text-align: left;">
-                <li>Encryption methodology</li>
-                <li>PIN protection and authentication</li>
-                <li>Local-only storage architecture</li>
-                <li>Secure deletion processes</li>
-                <li>Privacy-focused sharing features</li>
-                <li>Advanced protection features</li>
-            </ul>
+            <div class="security-highlight">
+                <h3>Understanding Threat Models</h3>
+                <p>Let's be real: if a state-level intelligence agency with unlimited resources is specifically targeting you, no app can fully protect you.</p>
+                <p>Short of that most extreme threat model SnapSafe is engineered to protect your photos against everything else. From the most common threats like nosy friends to more extreme threats like border checkpoint searches utilizing forensic tools.</p>
+            </div>
+        </section>
+
+        <section class="security-section">
+            <h2>Three Layers of Protection</h2>
+            <p>SnapSafe protects your photos across three critical dimensions:</p>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">⚖️</div>
+                    <h3>Legal Protection</h3>
+                    <p>Your constitutional rights matter. SnapSafe uses PIN protection instead of biometrics for a very specific reason: In the US, courts have ruled that authorities can legally force you to use your fingerprint or face to unlock a device, but they cannot compel you to reveal a PIN that exists only in your mind.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">👥</div>
+                    <h3>Social Protection</h3>
+                    <p>Sometimes the biggest threats aren't technical but social. SnapSafe requires strong PINs, prevents brute-force attacks, and even includes an emergency "Poison Pill" feature that can protect your photos if you're ever forced to reveal your PIN.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🔒</div>
+                    <h3>Technical Protection</h3>
+                    <p>We use state-of-the-art encryption and security practices to keep your photos safe, even if your device falls into the wrong hands. Your photos never touch the disk unencrypted – even thumbnails are stored securely.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-section">
+            <h2>Border Checkpoints & Legal Grey Areas</h2>
+            <p>Border checkpoints are a legal grey area, even for US citizens. If your phone is unlocked during a search, authorities have broad powers to examine its contents.</p>
+
+            <div class="security-tip">
+                <div class="tip-icon">💡</div>
+                <div>
+                    <p>If you're crossing a border, consider these precautions:</p>
+                    <ul>
+                        <li>Disable biometric authentication on your device</li>
+                        <li>Power off your phone before entering the checkpoint</li>
+                        <li>Set a PIN to be required at boot time</li>
+                        <li>Keep your device updated with the latest security patches</li>
+                    </ul>
+                </div>
+            </div>
+
+            <p>Even if your device is unlocked, SnapSafe provides an additional layer of protection with its separate PIN system. And our "secure window" feature prevents your photos from being visible in the task switcher, even if you were just using the app.</p>
+        </section>
+
+        <section class="security-section">
+            <h2>PIN Protection & Brute Force Prevention</h2>
+            <p>Your PIN is your first line of defense, and we've taken steps to make it strong:</p>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🔢</div>
+                    <h3>Strong PIN Requirements</h3>
+                    <p>We don't allow weak PINs like "1111" or "1234". We also blacklist common PINs like "6969" to ensure your protection isn't compromised by an easily-guessable code.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">⏱️</div>
+                    <h3>Exponential Backoff</h3>
+                    <p>Failed PIN attempts result in increasingly longer wait times between tries, making brute-force attacks impractical. This also gives you time to think if you're just misremembering your PIN.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🧨</div>
+                    <h3>Data Wipe Protection</h3>
+                    <p>After 10 failed PIN attempts, SnapSafe will automatically wipe all photo data. This ensures that persistent attackers can't eventually guess their way in.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-section">
+            <h2>The Poison Pill: Protection Under Duress</h2>
+            <p>Sometimes security isn't just about technology – it's about protecting yourself in difficult real-world situations. That's why we created the Poison Pill feature.</p>
+
+            <div class="security-highlight">
+                <h3>How It Works</h3>
+                <p>You can set up a second PIN – your "Poison Pill PIN." If you're ever forced to unlock SnapSafe against your will, you can enter this alternative PIN instead. The app will appear to unlock normally, but will secretly delete all your sensitive photos. The person demanding access won't know anything happened.</p>
+            </div>
+
+            <p>For added realism, you can designate certain non-sensitive photos as "decoys" that will remain visible after the Poison Pill is activated. This makes it less suspicious than if your secure photo app appeared empty when the attack gained access.</p>
+        </section>
+
+        <section class="security-section">
+            <h2>Secure Sharing Features</h2>
+            <p>Sometimes you need to share photos, but that doesn't mean you have to compromise on privacy:</p>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🔍</div>
+                    <h3>Metadata Scrubbing</h3>
+                    <p>By default, we remove all EXIF data from photos when sharing, including location information, device details, and timestamps. We also randomize filenames to prevent leaking information.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">👤</div>
+                    <h3>Secure Blurring</h3>
+                    <p>Our face detection can automatically identify faces in your photos that you might want to blur before sharing. Our blurring technique is resistant to de-blurring algorithms by destroying pixel data in a non-deterministic manner.</p>
+                </div>
+            </div>
+
+            <div class="security-tip">
+                <div class="tip-icon">⚠️</div>
+                <div>
+                    <p>Remember: Once you share a photo outside of SnapSafe, we can't guarantee its security. Be careful who you share with and which apps you use for sharing.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="security-section">
+            <h2>Technical Protections</h2>
+            <p>For the technically-minded, here's how we protect your photos:</p>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">🔐</div>
+                    <h3>Encryption</h3>
+                    <p>We use AES/GCM 256-bit encryption, the gold standard for protecting sensitive data. Your photos and thumbnails are never stored unencrypted, even temporarily.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">⏳</div>
+                    <h3>Session Timeouts</h3>
+                    <p>You can set how long SnapSafe stays unlocked after you authenticate. When your session expires, all sensitive data, such as encryption keys, are evicted from memory, protecting you from memory-based attacks.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🛡️</div>
+                    <h3>Backup Prevention</h3>
+                    <p>We explicitly disable all forms of app backup to prevent your encrypted photos from being extracted through Android's backup mechanisms.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🌐</div>
+                    <h3>Trusted Execution Environment</h3>
+                    <p>We utilize Hardware Backed keystores such as TEE or Secure Element where available, to provide the most robust protection possible on consumer hardware.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">🗝️</div>
+                    <h3>Key Sharding</h3>
+                    <p>Keys are sharded and obfuscated in memory to resist memory dump attacks. If the worst happens, and your OS is compromised, we may still yet be able to protect you.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">📄</div>
+                    <h3>Deep Dive</h3>
+                    <p>If you would like some more technical depth on how we approach security, <a href="technical.html" style="color: #6a11cb; font-weight: bold;">read our technical deep dive here.</a></p>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="security-highlight" style="text-align: center;">
+            <h3>Your Photos, Your Privacy, Your Control</h3>
+            <p>SnapSafe was built with one mission: to give you complete control over your visual privacy. In a world where photos are increasingly <strong>valuable</strong>, they are also increasingly <strong><em>vulnerable</em></strong>. We believe everyone deserves a truly secure solution.</p>
             <a href="index.html" class="button">Return to Home</a>
         </div>
-
-        <h3>Security First Philosophy</h3>
-        <p>SnapSafe was built from the ground up with security as our primary concern. Unlike many photo apps that add security as an afterthought, every feature in SnapSafe is designed with your privacy in mind.</p>
-
-        <p>Our approach considers multiple threat models, from casual snooping to sophisticated forensic tools. We believe your photos belong to you and only you should control who sees them and when.</p>
     </div>
 
     <footer>
         <div class="footer-links">
             <a href="index.html">Home</a>
+            <a href="technical.html">Technical Details</a>
             <a href="privacy.html">Privacy Policy</a>
+            <a href="incidents.html">Privacy Incidents</a>
             <a href="https://github.com/SecureCamera">GitHub</a>
             <a href="mailto:darkrockstudios@gmail.com">Contact</a>
         </div>

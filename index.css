@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -59,8 +62,17 @@ section {
     max-width: 1200px;
     margin: 0 auto;
 }
-.news-stories {
+section.news-stories {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
     background-color: #f9f9f9;
+}
+.news-stories div.container {
+    margin: 0 auto;
+    padding: 2rem 2rem;
+    max-width: 1200px;
 }
 .news-grid {
     display: grid;
@@ -180,6 +192,9 @@ footer {
         max-width: 500px;
         margin: 0 auto;
     }
+    .news-stories div.container {
+        padding: 3rem 1.5rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -198,6 +213,9 @@ footer {
         gap: 1.5rem;
     }
     section {
+        padding: 2rem 1rem;
+    }
+    .news-stories div.container {
         padding: 2rem 1rem;
     }
     .feature-card {

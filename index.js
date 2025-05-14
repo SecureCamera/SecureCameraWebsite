@@ -69,9 +69,14 @@ function handleResize() {
 function cycleNewsCards() {
     // Select a random position to swap out (0, 1, or 2)
     let positionToSwap = -1
-    do {
-        positionToSwap = Math.floor(Math.random() * cardsToShow);
-    } while (positionToSwap === previousCardChanged)
+    if(cardsToShow > 1) {
+        do {
+            positionToSwap = Math.floor(Math.random() * cardsToShow);
+        } while (positionToSwap === previousCardChanged);
+    } else {
+        positionToSwap = 0;
+    }
+
 
     // Get all the current cards
     const cards = document.querySelectorAll('.news-card');

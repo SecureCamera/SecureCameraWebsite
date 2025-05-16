@@ -177,8 +177,8 @@
                     <ul>
                         <li>Your device does not support an form of Hardware Backed encryption keys.</li>
                         <li>In this case we require your PIN to have a minimum size of 6 digits (<em>instead of 4</em>) because here, your PIN is the main source of entropy during PIN creation. 6 is still not very much, a longer PIN is much better in this case. But it must be understood that with this security level, we can not guarantee that an attacker, given enough time, will not be able to crack this encryption.</li>
-                        <li>Key = PBKF2(PIN + DeviceID, bSalt)</li>
-                        <li>Ephemeral Key: This key is derived in memory, and is never written to disk.</li>
+                        <li><strong>Ephemeral Key:</strong> This key is derived in memory, and is never written to disk.</li>
+                        <li><div class="tech-code">Key = PBKF2(PIN + DeviceID, bSalt)</div></li>
                     </ul>
                 </div>
 
@@ -189,7 +189,7 @@
                         <li>Your device supports a Trusted Execution Environment (TEE) for storing encryption keys and executing some cryptographic operations. A KEK (<em>Key Encryption Key</em>) is provisioned inside of the TEE.</li>
                         <li><strong>Key Wrapping:</strong> This is the default mode, a Data Encryption Key is constructed in memory, then passed into the TEE, and encrypted with the KEK. This "Wrapped Key" is then written to disk. When the user authenticates with their PIN, the Wrapped key is read from disk, passed back the TEE, and finally the unwrapped Data key is resident in main memory.</li>
                         <li><strong>Ephemeral Key:</strong> An optional level of security this mode never writes the fully derived key to disk. In this mode the dSalt is passed into the TEE, and encrypted with the KEK, and written to disk. Although this is the main source of entry, it is still not the full key. When the user authenticates we read the dSalt from disk, decrypt it with the KEK in the TEE, and finally construct the full key in memory. The key derivation function is quite slow (<em>by design of course</em>) so the trade off is that it now takes multiple seconds to authenticate.</li>
-                        <li>Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</li>
+                        <li><div class="tech-code">Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</div></li>
                     </ul>
                 </div>
 
@@ -199,7 +199,7 @@
                     <ul>
                         <li>Your device supports a Secure Element (SE), this is the strongest security possible. Functionally it is similar to a TEE, but it is a physically separate chip from your main SOC. It is thus resistant to side channel attacks. It is also designed to be resistant to physical "chip-off" attacks where your device has been deconstructed and the chips put in an attack harness. In this case a SE is designed to detect this and self destruct the data inside.</li>
                         <li>Other than the benefits the SE adds on it's own, the rest of our security is identical to the <strong>Normal Security</strong> level.</li>
-                        <li>Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</li>
+                        <li><div class="tech-code">Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</div></li>
                     </ul>
                 </div>
             </div>

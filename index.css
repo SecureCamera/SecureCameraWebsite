@@ -1,3 +1,8 @@
+:root {
+    --link-color: #4dabf7;
+    --link-hover: #8d74fc;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -8,6 +13,17 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: var(--link-hover);
+    text-decoration: underline;
 }
 
 /* Make all images responsive */

@@ -14,6 +14,19 @@ let cardsToShow = getCardsToShow(); // Get initial number of cards to show
 let displayedIndices = []; // Will be initialized based on cardsToShow
 let previousIndex = -1; // Will be initialized based on cardsToShow
 let previousCardChanged = -1;
+let cardCycleTimer = undefined
+
+// Set up automatic cycling with timing based on number of cards shown
+// Base interval is longer when fewer cards are shown
+const baseInterval = 3000;
+const randomFactor = 2000;
+
+function getCardCycleInterval() {
+    // Multiply base interval by (4 - cardsToShow) to make it longer for fewer cards
+    // This gives us: 1 card = 3x base interval, 2 cards = 2x base interval, 3 cards = 1x base interval
+    const multiplier = 4 - cardsToShow;
+    return (baseInterval * multiplier) + (Math.random() * randomFactor);
+}
 
 // Initialize the arrays based on cardsToShow
 function initializeArrays() {
@@ -62,6 +75,12 @@ function handleResize() {
         cardsToShow = newCardsToShow;
         initializeArrays();
         generateNewsCards();
+
+        // Update the cycling interval if it exists
+        if (typeof cardCycleTimer !== 'undefined') {
+            clearInterval(cardCycleTimer);
+            cardCycleTimer = setInterval(cycleNewsCards, getCardCycleInterval());
+        }
     }
 }
 
@@ -173,14 +192,10 @@ function createNewsCard(news) {
 
 // Initialize when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize arrays based on current screen size
     initializeArrays();
-
-    // Generate initial news cards
     generateNewsCards();
 
-    // Set up automatic cycling every 3-5 seconds with randomness
-    setInterval(cycleNewsCards, 3000 + Math.random() * 2000);
+    cardCycleTimer = setInterval(cycleNewsCards, getCardCycleInterval());
 
     // Add window resize event listener
     window.addEventListener('resize', handleResize);

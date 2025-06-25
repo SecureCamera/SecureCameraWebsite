@@ -41,6 +41,26 @@ header {
     padding: 3rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.hero-content {
+    flex: 1;
+    text-align: center;
+}
+.hero-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-video iframe {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 .hero h1 {
     font-size: 3rem;
@@ -189,6 +209,18 @@ footer {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+    .hero-video {
+        width: 100%;
+        margin-top: 2rem;
+    }
+    .hero-video iframe {
+        width: 100%;
+        height: 300px;
+    }
     .hero h1 {
         font-size: 2.5rem;
     }
@@ -214,6 +246,15 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 1.5rem 1rem;
+    }
+    .hero-video {
+        margin-top: 1.5rem;
+    }
+    .hero-video iframe {
+        height: 220px;
+    }
     .hero h1 {
         font-size: 2rem;
     }
@@ -254,6 +295,14 @@ footer {
 }
 
 @media (min-width: 1400px) {
+    .hero {
+        padding: 4rem 2rem;
+        gap: 3rem;
+    }
+    .hero-video iframe {
+        width: 640px;
+        height: 360px;
+    }
     .hero h1 {
         font-size: 3.5rem;
     }

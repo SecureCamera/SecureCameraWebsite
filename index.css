@@ -381,6 +381,14 @@ footer {
     background-color: #558b2f;
 }
 
+.appstore-button {
+    background-color: #000000;
+}
+
+.appstore-button:hover {
+    background-color: #333333;
+}
+
 .fdroid-button {
     background-color: #1976d2;
 }

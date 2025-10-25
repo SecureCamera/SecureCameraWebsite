@@ -1,16 +1,25 @@
+/* ===================================
+   Security Page Specific Styles
+   =================================== */
+
 .security-section {
     padding: 3rem 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--border-light);
 }
+
 .security-section:last-child {
     border-bottom: none;
 }
+
+/* Security page uses common .grid, .card, .icon, .highlight-box, and .info-box styles */
+/* Aliasing common classes for backward compatibility with HTML */
 .security-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
+
 .security-card {
     background: white;
     border-radius: 10px;
@@ -18,62 +27,50 @@
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
 }
+
 .security-card:hover {
     transform: translateY(-5px);
 }
+
+.security-card h3 {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
 .security-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #6a11cb;
+    color: var(--primary-purple);
 }
-.security-card h3 {
-    margin-top: 0;
-    color: #333;
-}
+
 .security-highlight {
-    background-color: #f9f9f9;
+    background-color: var(--bg-light);
     border-radius: 10px;
     padding: 2rem;
     margin: 2rem 0;
-    border-left: 5px solid #6a11cb;
+    border-left: 5px solid var(--primary-purple);
 }
+
 .security-highlight h3 {
     margin-top: 0;
-    color: #6a11cb;
+    color: var(--primary-purple);
 }
+
 .security-tip {
-    background-color: #e3f2fd;
+    background-color: var(--bg-highlight);
     border-radius: 10px;
     padding: 1.5rem;
     margin: 1.5rem 0;
     display: flex;
     align-items: flex-start;
 }
+
 .tip-icon {
     font-size: 2rem;
     margin-right: 1rem;
-    color: #1976d2;
+    color: var(--primary-blue);
 }
+
 .security-tip p {
     margin: 0;
-}
-header {
-    background: linear-gradient(135deg, #00a86b 0%, #2575fc 100%);
-}
-.button {
-    display: inline-block;
-    background-color: #ff6b6b;
-    color: white;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    margin-top: 1rem;
-}
-.button:hover {
-    background-color: #ff5252;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }

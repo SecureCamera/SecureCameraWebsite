@@ -1,0 +1,250 @@
+/* ===================================
+   Common Styles - Shared Across All Pages
+   =================================== */
+
+/* CSS Variables */
+:root {
+    --link-color: #4dabf7;
+    --link-hover: #8d74fc;
+    --primary-purple: #6a11cb;
+    --primary-blue: #2575fc;
+    --primary-green: #00a86b;
+    --accent-red: #ff6b6b;
+    --accent-red-hover: #ff5252;
+    --text-dark: #333;
+    --bg-light: #f9f9f9;
+    --bg-highlight: #e3f2fd;
+    --border-light: #eee;
+}
+
+/* Base Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+/* Make all images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-blue) 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section */
+section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Buttons */
+.button,
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.button:hover,
+.cta-button:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    color: white;
+    text-decoration: none;
+}
+
+/* Card Styles */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--text-dark);
+}
+
+/* Icon Styles */
+.icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+}
+
+/* Grid Layouts */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Highlight Boxes */
+.highlight-box {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 5px solid var(--primary-purple);
+}
+
+.highlight-box h3 {
+    margin-top: 0;
+    color: var(--primary-purple);
+}
+
+/* Info/Tip Boxes */
+.info-box {
+    background-color: var(--bg-highlight);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.info-icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+    color: var(--primary-blue);
+}
+
+.info-box p {
+    margin: 0;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 1rem;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-button,
+    .button {
+        padding: 0.8rem 1.8rem;
+    }
+
+    .card {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .cta-button,
+    .button {
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        display: block;
+        width: 80%;
+        margin: 8px auto;
+        text-align: center;
+    }
+
+    .grid-3col,
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (min-width: 1400px) {
+    .grid-3col {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 2000px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1800px;
+    }
+}

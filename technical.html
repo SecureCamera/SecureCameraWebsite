@@ -171,12 +171,17 @@
 
             <p><strong>Argon2 Salt:</strong> The salt used to Argon2 hash the PIN, is also used as the PBKF2 algorithm salt</p>
 
-            <div class="tech-grid">
+            <hr class="subtle-divider" />
+
+            <h3>Security Levels Explained:</h3>
+            <p>You can check which security level your device supports during PIN creation, or in settings. Here is what each security level actually means:</p>
+
+            <div class="tech-grid expanded">
                 <div class="tech-card">
                     <div class="tech-icon">🔑</div>
                     <h3>Weak Security</h3>
                     <ul>
-                        <li>Your device does not support an form of Hardware Backed encryption keys.</li>
+                        <li>Your device does not support any form of Hardware Backed encryption keys.</li>
                         <li>In this case we require your PIN to have a minimum size of 6 digits (<em>instead of 4</em>) because here, your PIN is the main source of entropy during PIN creation. 6 is still not very much, a longer PIN is much better in this case. But it must be understood that with this security level, we can not guarantee that an attacker, given enough time, will not be able to crack this encryption.</li>
                         <li><strong>Ephemeral Key:</strong> This key is derived in memory, and is never written to disk.</li>
                         <li><div class="tech-code">Key = PBKF2(PIN + DeviceID, bSalt)</div></li>
@@ -187,8 +192,8 @@
                     <div class="tech-icon">🔐</div>
                     <h3>Normal Security</h3>
                     <ul>
-                        <li>Your device supports a Trusted Execution Environment (TEE) for storing encryption keys and executing some cryptographic operations. A KEK (<em>Key Encryption Key</em>) is provisioned inside of the TEE.</li>
-                        <li><strong>Key Wrapping:</strong> This is the default mode, a Data Encryption Key is constructed in memory, then passed into the TEE, and encrypted with the KEK. This "Wrapped Key" is then written to disk. When the user authenticates with their PIN, the Wrapped key is read from disk, passed back the TEE, and finally the unwrapped Data key is resident in main memory.</li>
+                        <li>Your device supports a Trusted Execution Environment (TEE) for storing encryption keys and executing some cryptographic operations. A KEK (<em>Key Encryption Key</em>) is provisioned inside the TEE.</li>
+                        <li><strong>Key Wrapping:</strong> This is the default mode, a Data Encryption Key (DEK) is constructed in memory, then passed into the TEE, and encrypted with the KEK. This "Wrapped Key" is then written to disk. When the user authenticates with their PIN, the Wrapped key is read from disk, passed back the TEE, and finally the unwrapped DEK is resident in main memory.</li>
                         <li><strong>Ephemeral Key:</strong> An optional level of security this mode never writes the fully derived key to disk. In this mode the dSalt is passed into the TEE, and encrypted with the KEK, and written to disk. Although this is the main source of entry, it is still not the full key. When the user authenticates we read the dSalt from disk, decrypt it with the KEK in the TEE, and finally construct the full key in memory. The key derivation function is quite slow (<em>by design of course</em>) so the trade off is that it now takes multiple seconds to authenticate.</li>
                         <li><div class="tech-code">Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</div></li>
                     </ul>
@@ -199,11 +204,21 @@
                     <h3>Strong Security</h3>
                     <ul>
                         <li>Your device supports a Secure Element (SE), this is the strongest security possible. Functionally it is similar to a TEE, but it is a physically separate chip from your main SOC. It is thus resistant to side channel attacks. It is also designed to be resistant to physical "chip-off" attacks where your device has been deconstructed and the chips put in an attack harness. In this case a SE is designed to detect this and self destruct the data inside.</li>
-                        <li>Other than the benefits the SE adds on it's own, the rest of our security is identical to the <strong>Normal Security</strong> level.</li>
+                        <li>Other than the benefits the SE adds on its own, the rest of our security is identical to the <strong>Normal Security</strong> level.</li>
                         <li><div class="tech-code">Key = PBKF2(PIN + DeviceID + dSalt, bSalt)</div></li>
                     </ul>
                 </div>
             </div>
+
+            <div class="tech-highlight">
+                <h3>Key Sharding</h3>
+                <p>All Data Encryption Keys, once loaded into memory, are stored as <strong>Sharded Keys</strong>.</p>
+                <p>When instantiated <code>buffer1</code> of length <code>[key size] + [random₁]</code> length is created and fill with entropy. Then a second <code>buffer2</code> of size <code>[key size] + [random₂]</code> is created and fill with entropy. The leading part of the buffer is then filled with the XOR'd DEK: <code>buffer2 = buffer1 <strong>XOR</strong> DEK</code></p>
+                <p>This should make the in-memory key resistant to memory dumping as well as automatic scanners looking for AES Key sized allocations. Since the allocations are made separately, and of different sizes, there is a likelihood they will not reside next to each other in memory making it possible that a partial memory dump may not include both of them.</p>
+                <p>Lastly, the key shards are stored in native memory, not the JVM heap. This allows us to have deterministic control over deallocation. Meaning we can ensure the memory gets zero'd before release.</p>
+            </div>
+
+            <hr class="subtle-divider" />
 
             <p><strong>Photos</strong></p>
             <p>On disk photos and thumbnails are encrypted using a standard Initialization Vector (IV) + AES/GCM 256. The IV is unique to each photo, and is concatenated at the start of each file. So decryption first reads out the IV, then uses that and the key to decrypt the rest of the file.</p>

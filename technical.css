@@ -53,7 +53,6 @@
 }
 
 /* Tech page uses common .grid, .card, and .icon styles */
-/* Aliasing common classes for backward compatibility with HTML */
 .tech-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -82,4 +81,28 @@
     font-size: 3rem;
     margin-bottom: 1rem;
     color: var(--primary-purple);
+}
+
+.tech-grid.expanded {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.subtle-divider {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    width: 60%;
+    margin: 2rem auto;
+}
+
+code {
+    display: inline;
+    padding: 0.2em 0.4em;
+    background-color: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 0.9em;
+    color: #333;
+    white-space: pre-wrap;
+    word-break: break-word;
 }

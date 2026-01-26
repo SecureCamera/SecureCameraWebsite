@@ -1,6 +1,133 @@
 /* ===================================
    Index Page Specific Styles
    =================================== */
+
+/* Featured Press Banner */
+.featured-press {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+}
+
+.featured-press-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.featured-press-link:hover {
+    background: linear-gradient(135deg, #252525 0%, #383838 100%);
+    text-decoration: none;
+    color: white;
+}
+
+.featured-press .container {
+    padding: 1rem 2rem;
+}
+
+.featured-press-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.featured-cover {
+    width: 60px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    flex-shrink: 0;
+}
+
+.featured-text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.featured-logo {
+    height: 28px;
+    width: auto;
+}
+
+.featured-headline {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #7bed9f;
+}
+
+.featured-article {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .featured-press .container {
+        padding: 1rem 1.5rem;
+    }
+
+    .featured-press-content {
+        gap: 1rem;
+    }
+
+    .featured-cover {
+        width: 50px;
+    }
+
+    .featured-logo {
+        height: 24px;
+    }
+
+    .featured-headline {
+        font-size: 0.9rem;
+    }
+
+    .featured-article {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .featured-press .container {
+        padding: 0.8rem 1rem;
+    }
+
+    .featured-press-content {
+        flex-direction: column;
+        gap: 0.8rem;
+        text-align: center;
+    }
+
+    .featured-cover {
+        width: 45px;
+    }
+
+    .featured-text {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .featured-logo {
+        height: 22px;
+    }
+
+    .featured-headline {
+        font-size: 0.85rem;
+    }
+
+    .featured-article {
+        font-size: 0.75rem;
+    }
+}
 .hero {
     padding: 3rem 1rem;
     max-width: 1200px;

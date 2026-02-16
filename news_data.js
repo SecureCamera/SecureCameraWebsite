@@ -84,4 +84,11 @@ const newsData = [
         logo_image: "images/news/news_logo_bbc.png",
         header_image: "images/news/news_header_google_takeout.webp"
     },
+    {
+        title: "Marine detained says Feds copied his phone without a warrant",
+        description: "He was observing after Alex Pretti’s killing. He says feds detained him at gunpoint, sampled his DNA, scanned his face, and cloned his phone. ",
+        link: "https://theintercept.com/2026/02/12/minneapolis-federal-agents-phone-surveillance-alex-pretti/",
+        logo_image: "images/news/news_logo_intercept.webp",
+        header_image: "images/news/news_header_8.webp"
+    },
 ];

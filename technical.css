@@ -2,6 +2,8 @@
    Technical Page Specific Styles
    =================================== */
 
+/* Cards, grids, highlights, notes, and inline code share the common component styles */
+
 .tech-section {
     padding: 3rem 0;
     border-bottom: 1px solid var(--border-light);
@@ -11,76 +13,19 @@
     border-bottom: none;
 }
 
-.tech-highlight {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-left: 5px solid var(--primary-purple);
-}
-
-.tech-highlight h3 {
-    margin-top: 0;
-    color: var(--primary-purple);
+.tech-section > p {
+    max-width: 70ch;
 }
 
 .tech-code {
-    background-color: #f5f5f5;
-    padding: 1rem;
-    border-radius: 5px;
-    font-family: monospace;
+    background-color: var(--bg-code);
+    border: 1px solid var(--border-light);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    font-family: ui-monospace, 'SFMono-Regular', Menlo, Consolas, 'Courier New', monospace;
+    font-size: 0.9rem;
     overflow-x: auto;
     margin: 1rem 0;
-}
-
-.tech-note {
-    background-color: var(--bg-highlight);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    display: flex;
-    align-items: flex-start;
-}
-
-.note-icon {
-    font-size: 2rem;
-    margin-right: 1rem;
-    color: var(--primary-blue);
-}
-
-.tech-note p {
-    margin: 0;
-}
-
-/* Tech page uses common .grid, .card, and .icon styles */
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.tech-card {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.tech-card:hover {
-    transform: translateY(-5px);
-}
-
-.tech-card h3 {
-    margin-top: 0;
-    color: var(--text-dark);
-}
-
-.tech-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--primary-purple);
 }
 
 .tech-grid.expanded {
@@ -89,20 +34,13 @@
 
 .subtle-divider {
     border: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--border-light);
     width: 60%;
     margin: 2rem auto;
 }
 
-code {
-    display: inline;
-    padding: 0.2em 0.4em;
-    background-color: #f5f5f5;
-    border: 1px solid #e0e0e0;
-    border-radius: 3px;
-    font-family: 'Courier New', Consolas, monospace;
-    font-size: 0.9em;
-    color: #333;
-    white-space: pre-wrap;
-    word-break: break-word;
+@media (max-width: 768px) {
+    .tech-grid.expanded {
+        grid-template-columns: 1fr;
+    }
 }

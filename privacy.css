@@ -2,10 +2,8 @@
    Privacy Page Specific Styles
    =================================== */
 
-/* Privacy page uses common styles for body, header, container, hero, button, and footer */
-/* Override header gradient for privacy page */
 header {
-    background: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-blue) 100%);
+    background: var(--header-glow), linear-gradient(135deg, var(--primary-green-deep) 0%, var(--primary-blue) 100%);
 }
 
 .hero h1 {
@@ -18,56 +16,83 @@ header {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .privacy-section {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    padding: 2rem;
-    margin: 2rem 0;
+    background-color: white;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    box-shadow: var(--shadow-sm);
 }
 
 .privacy-section h2 {
-    color: var(--primary-purple);
-    border-bottom: 2px solid #e0e0e0;
-    padding-bottom: 0.5rem;
+    color: var(--primary-green-deep);
+    font-size: 1.4rem;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 0.6rem;
+    margin-bottom: 1rem;
 }
+
+.privacy-section p:last-child {
+    margin-bottom: 0;
+}
+
 .data-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
     margin: 2rem 0;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
 }
+
 .data-table th {
-    background-color: var(--primary-purple);
+    background: linear-gradient(135deg, var(--primary-green-deep), var(--primary-blue));
     color: white;
-    padding: 1rem;
+    padding: 0.9rem 1rem;
     text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
+
 .data-table td {
     padding: 1rem;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--border-light);
 }
+
 .data-table tr:last-child td {
     border-bottom: none;
 }
+
 .data-table tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: var(--bg-light);
 }
+
 .highlight {
-    font-weight: bold;
-    color: var(--primary-purple);
+    font-weight: 700;
+    color: var(--primary-green-deep);
 }
+
 .effective-date {
     text-align: center;
     font-style: italic;
-    color: #666;
-    margin-bottom: 2rem;
+    color: var(--text-muted);
+    margin: 2rem 0 1.5rem;
 }
+
 .summary {
-    background-color: #e8f4ff;
-    padding: 1.5rem;
-    border-radius: 10px;
-    border-left: 5px solid var(--primary-blue);
+    background-color: var(--bg-highlight);
+    border: 1px solid #d6e5fb;
+    padding: 1.25rem 1.5rem;
+    border-radius: var(--radius);
+    border-left: 4px solid var(--primary-blue);
     margin: 2rem 0;
+}
+
+.summary p:last-child {
+    margin-bottom: 0;
 }

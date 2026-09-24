@@ -2,6 +2,8 @@
    Security Page Specific Styles
    =================================== */
 
+/* Cards, grids, highlights, and tips share the common component styles */
+
 .security-section {
     padding: 3rem 0;
     border-bottom: 1px solid var(--border-light);
@@ -11,66 +13,6 @@
     border-bottom: none;
 }
 
-/* Security page uses common .grid, .card, .icon, .highlight-box, and .info-box styles */
-/* Aliasing common classes for backward compatibility with HTML */
-.security-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-.security-card {
-    background: white;
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-
-.security-card:hover {
-    transform: translateY(-5px);
-}
-
-.security-card h3 {
-    margin-top: 0;
-    color: var(--text-dark);
-}
-
-.security-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--primary-purple);
-}
-
-.security-highlight {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    padding: 2rem;
-    margin: 2rem 0;
-    border-left: 5px solid var(--primary-purple);
-}
-
-.security-highlight h3 {
-    margin-top: 0;
-    color: var(--primary-purple);
-}
-
-.security-tip {
-    background-color: var(--bg-highlight);
-    border-radius: 10px;
-    padding: 1.5rem;
-    margin: 1.5rem 0;
-    display: flex;
-    align-items: flex-start;
-}
-
-.tip-icon {
-    font-size: 2rem;
-    margin-right: 1rem;
-    color: var(--primary-blue);
-}
-
-.security-tip p {
-    margin: 0;
+.security-section > p {
+    max-width: 70ch;
 }
